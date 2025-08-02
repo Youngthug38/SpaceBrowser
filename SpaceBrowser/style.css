@@ -1,0 +1,183 @@
+/* --- Core Styles & New Font --- */
+body {
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #0c0c1a;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* --- Animated Starfield Background --- */
+@keyframes move-stars {
+    from { transform: translateY(0px); }
+    to   { transform: translateY(-2000px); }
+}
+
+#starfield-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background-image: 
+        radial-gradient(1px 1px at 20px 30px, #eee, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 50px 160px, #ddd, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 150px 120px, #ddd, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 100px 200px, #fff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 250px 250px;
+    animation: move-stars 150s linear infinite;
+    z-index: -1;
+}
+
+/* --- Header & Footer --- */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin: 0;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #ccc;
+    max-width: 500px;
+    margin: 10px auto 0;
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+footer a {
+    color: #61a6ff;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* --- Dashboard & Widgets --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.widget {
+    background-color: rgba(30, 30, 48, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.widget h2 {
+    margin-top: 0;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-bottom: 2px solid #61a6ff;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.loading {
+    color: #aaa;
+    text-align: center;
+    padding: 20px;
+}
+
+#apod-widget {
+    grid-column: 1 / -1; 
+}
+
+#apod-content img, #apod-content iframe {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 6px;
+    background-color: #0c0c1a;
+}
+
+#apod-content h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #f0f0f0;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+#apod-content p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #ccc;
+}
+
+#epic-image-container img, #mars-photo-content img, #moon-content img {
+    max-width: 100%;
+    border-radius: 6px;
+    background-color: #121212;
+    margin-bottom: 15px;
+}
+
+.image-caption {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#moon-content p {
+    font-size: 1rem;
+    margin: 8px 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+#moon-content span {
+    font-weight: 300;
+    color: #ccc;
+    padding-left: 8px;
+}
+
+.rover-choice {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.rover-btn {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1rem;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.rover-btn.active {
+    background-color: #61a6ff;
+    border-color: #61a6ff;
+}
