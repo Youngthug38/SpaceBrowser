@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="starfield-background"></div>
+
+    <header>
+        <h1>Cosmic Dashboard</h1>
+        <p class="tagline">An interactive dashboard exploring our solar system and beyond, powered by NASA's open APIs.</p>
+    </header>
+
+    <main class="dashboard-grid">
+
+        <div class="widget" id="apod-widget">
+            <h2>Space Trivia</h2>
+            <div id="apod-content">
+                <p class="loading">Loading Picture...</p>
+            </div>
+        </div>
+
+        <div class="widget" id="moon-widget">
+            <h2>Apollo Mission Showcase</h2>
+            <div id="moon-content">
+                <p class="loading">Exploring the Apollo Archives...</p>
+            </div>
+        </div>
+
+        <div class="widget" id="earth-widget">
+            <h2>Earth from 1 Million Miles</h2>
+            <div id="epic-image-container">
+                <p class="loading">Loading latest image of Earth...</p>
+            </div>
+        </div>
+
+        <div class="widget" id="history-widget">
+            <h2>Latest Rover Photo</h2>
+            <div class="rover-choice">
+                <button class="rover-btn active" data-rover="curiosity">Curiosity</button>
+                <button class="rover-btn" data-rover="perseverance">Perseverance</button>
+            </div>
+            <div id="mars-photo-content">
+                <p class="loading">Fetching latest rover image...</p>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+        <p>Created by Ali William Mousawi, all data provided by <a href="https://api.nasa.gov" target="_blank">NASA Open APIs</a>.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
